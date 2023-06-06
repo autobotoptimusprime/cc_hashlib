@@ -9,7 +9,7 @@ public:
     explicit base_of_sha224_and_sha256(const std::string& str) : __seq(str.begin(), str.end()) {}
     base_of_sha224_and_sha256(const base_of_sha224_and_sha256 &) = delete;
     base_of_sha224_and_sha256(base_of_sha224_and_sha256 &&other) : __seq(std::move(other.__seq)) {}
-    auto operator=(const base_of_sha224_and_sha256 &other) = delete;
+    auto operator=(const base_of_sha224_and_sha256 &other) ->base_of_sha224_and_sha256& = delete;
     auto operator=(base_of_sha224_and_sha256&& other) -> base_of_sha224_and_sha256& {
         if (std::addressof(other) != this) {
             __seq = std::move(other.__seq);
@@ -144,6 +144,7 @@ protected:
 
 class sha256 final : public base_of_sha224_and_sha256 {
 public:
+    using base_of_sha224_and_sha256::base_of_sha224_and_sha256;
     constexpr static size_t result_length = 32;//unit: bytes
     auto get_init_magic_nums() -> std::array<uint32_t, 8> override {
         return {
@@ -159,6 +160,7 @@ public:
 
 class sha224 final : public base_of_sha224_and_sha256 {
 public:
+    using base_of_sha224_and_sha256::base_of_sha224_and_sha256;
     using byte = unsigned char;
     constexpr static size_t result_length = 28;//unit: bytes
     auto get_init_magic_nums() -> std::array<uint32_t, 8> override {
