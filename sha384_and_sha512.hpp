@@ -153,8 +153,9 @@ protected:
 
 
 
-class sha512 final : public base_of_sha384_and_sha512 {
+class sha512 : public base_of_sha384_and_sha512 {
 public:
+    using base_of_sha384_and_sha512::base_of_sha384_and_sha512;
     constexpr static size_t result_length = 64;//unit: bytes
     auto get_init_magic_nums() -> std::array<uint64_t, 8> override {
         return {
@@ -170,9 +171,10 @@ public:
 };
 
 
-class sha384 final : public base_of_sha384_and_sha512 {
+class sha384 : public base_of_sha384_and_sha512 {
 public:
-     constexpr static size_t result_length = 48;//unit: bytes
+    using base_of_sha384_and_sha512::base_of_sha384_and_sha512;
+    constexpr static size_t result_length = 48;//unit: bytes
     auto get_init_magic_nums() -> std::array<uint64_t, 8> override {
         return {
             0xcbbb9d5dc1059ed8u, 0x629a292a367cd507u, 
