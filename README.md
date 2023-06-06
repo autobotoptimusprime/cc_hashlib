@@ -6,12 +6,12 @@
 * 用法与Python的hashlib库类似
 * 需要编译器支持C++11及以上的标准
 ## example/例子
-* use this library only including the header `hashlib`
+* Use this library only including the header `hashlib`
 * 仅需include头文件`hashlib`即可
 ```c++
 #include "hashlib"
 ```
-* get md5 of a string by using `ccat::hash::md5`
+* Get md5 of a string by using `ccat::hash::md5`
 * 使用`ccat::hash::md5`获取字符串的md5值
 ```c++
 #include <iostream>
