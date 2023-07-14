@@ -1,7 +1,7 @@
 # cc_hashlib
 * A C++ header-only hash algorithm library (including md5, sha1, sha256, sha224, sha384, sha512);
 * Use this library like Python's hashlib;
-* The compiler needs to support C++11 and above standards
+* minimum required standard: C++11
 * 这是一个header-only风格的C++哈希算法库 (包含md5, sha1, sha256, sha224, sha384, sha512等算法);
 * 用法与Python的hashlib库类似
 * 需要编译器支持C++11及以上的标准
